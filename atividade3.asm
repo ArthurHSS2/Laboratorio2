@@ -1,18 +1,22 @@
-lw x19, f
-lw x20, g
-lw x21, h
-lw x22, i
-lw x23, j
+lw x10, f
+lw x11, g
+lw x12, h
+lw x13, i
+lw x14, j
 
-bnq x22, x23, else
-add x19, x20, x21
-halt
+bne x13, x14, else
+add x10, x11, x12
+jal x0, end
 
 else:
-sub x19, x20, x21
+sub x10, x11, x12
+
+end:
+halt
 
 f: .word 0x0
-g: .word 0x0
-h: .word 0x0
-i: .word 0x0
-j: .word 0x0
+g: .word 0x9
+h: .word 0x2
+i: .word 0x1
+j: .word 0x1
+
